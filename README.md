@@ -1,4 +1,4 @@
-# Books API
+# Intl Library API
 
 [![Build Status](https://travis-ci.org/javierlopeza/intl-library-api.svg?branch=master)](https://travis-ci.org/javierlopeza/intl-library-api)
 [![Coverage Status](https://coveralls.io/repos/github/javierlopeza/intl-library-api/badge.svg?branch=master)](https://coveralls.io/github/javierlopeza/intl-library-api?branch=master)
