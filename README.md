@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/javierlopeza/intl-library-api.svg?branch=master)](https://travis-ci.org/javierlopeza/intl-library-api)
 [![Coverage Status](https://coveralls.io/repos/github/javierlopeza/intl-library-api/badge.svg?branch=master)](https://coveralls.io/github/javierlopeza/intl-library-api?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/0c0992a9d67e3663b55f/maintainability)](https://codeclimate.com/github/javierlopeza/books-admin/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6611f1a33ffdb6dce589/maintainability)](https://codeclimate.com/github/javierlopeza/intl-library-api/maintainability)
 
 Restful API with NodeJS, Express, PostgreSQL, Sequelize, Travis, Mocha, Coveralls and Code Climate.
 
