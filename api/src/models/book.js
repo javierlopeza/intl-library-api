@@ -6,11 +6,17 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.INTEGER,
       },
+      bookFormat: {
+        type: DataTypes.STRING,
+      },
       datePublished: {
         type: DataTypes.DATE,
       },
       description: {
         type: DataTypes.TEXT,
+      },
+      goodreadsUrl: {
+        type: DataTypes.STRING,
       },
       imageUrl: {
         type: DataTypes.STRING,
@@ -18,6 +24,21 @@ module.exports = (sequelize, DataTypes) => {
       isbn: {
         type: DataTypes.STRING,
         unique: true,
+      },
+      language: {
+        type: DataTypes.STRING,
+      },
+      pages: {
+        type: DataTypes.INTEGER,
+      },
+      publisher: {
+        type: DataTypes.STRING,
+      },
+      ratingAverage: {
+        type: DataTypes.FLOAT,
+      },
+      ratingCount: {
+        type: DataTypes.INTEGER,
       },
       title: {
         allowNull: false,

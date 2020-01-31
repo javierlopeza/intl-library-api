@@ -14,10 +14,17 @@ module.exports = {
       const authorId = authorsIds[book.author];
       booksData.push({
         authorId,
+        bookFormat: book.bookFormat,
         datePublished: parseDate(book.datePublished),
         description: book.description,
+        goodreadsUrl: book.goodreadsUrl,
         imageUrl: book.imgUrl,
         isbn: book.isbn,
+        language: book.language,
+        pages: book.pages,
+        publisher: book.publisher,
+        ratingAverage: book.ratingAverage,
+        ratingCount: book.ratingCount,
         title: book.title,
         createdAt: new Date(),
         updatedAt: new Date(),
