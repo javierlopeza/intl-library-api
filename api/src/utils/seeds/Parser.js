@@ -1,6 +1,9 @@
 const chrono = require('chrono-node');
 
 function parseDate(str) {
+  if (!str) {
+    return null;
+  }
   if (str.match(/^[0-9]{4}$/)) {
     return chrono.parseDate(`1/1/${str}`);
   }
