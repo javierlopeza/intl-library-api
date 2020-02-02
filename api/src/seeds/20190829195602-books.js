@@ -17,6 +17,7 @@ module.exports = {
         datePublished: parseDate(book.datePublished),
         description: book.description,
         imageUrl: book.imgUrl,
+        isbn: book.isbn,
         title: book.title,
         createdAt: new Date(),
         updatedAt: new Date(),
