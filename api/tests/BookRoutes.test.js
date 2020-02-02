@@ -12,7 +12,7 @@ const { expect } = chai;
 describe('Testing book endpoints:', () => {
   before(async () => {
     const author = await Author.create({ name: 'Howard Stark' });
-    await Book.create({ title: 'How to be Iron Man', authorId: author.id });
+    await Book.create({ title: 'How to be Iron Man', authorId: author.id, isbn: '12345' });
   });
 
   it('It should create a book', async () => {
@@ -24,6 +24,7 @@ describe('Testing book endpoints:', () => {
       datePublished: '1925-10-25',
       imageUrl:
         'https://images-na.ssl-images-amazon.com/images/I/41iers%2BHLSL._SX326_BO1,204,203,200_.jpg',
+      isbn: '987654321',
     };
     const res = await chai
       .request(app)
@@ -37,12 +38,14 @@ describe('Testing book endpoints:', () => {
       'description',
       'datePublished',
       'imageUrl',
+      'isbn',
       'authorId',
     ]);
     expect(res.body.data.title).to.equal(book.title);
     expect(res.body.data.description).to.equal(book.description);
     expect(res.body.data.datePublished).to.equal(book.datePublished);
     expect(res.body.data.imageUrl).to.equal(book.imageUrl);
+    expect(res.body.data.isbn).to.equal(book.isbn);
     expect(res.body.data.authorId).to.equal(author.id);
   });
 
@@ -53,6 +56,7 @@ describe('Testing book endpoints:', () => {
       title: 'To Kill a Mockingbird',
       description: 'Revolves around the trial in which Atticus defends Tom Robinson.',
       datePublished: '1960-07-11',
+      isbn: '123456789',
     };
     const fileName = 'book1.jpg';
     let req = chai
@@ -71,12 +75,14 @@ describe('Testing book endpoints:', () => {
       'description',
       'datePublished',
       'imageUrl',
+      'isbn',
       'authorId',
     ]);
     expect(res.body.data.title).to.equal(book.title);
     expect(res.body.data.description).to.equal(book.description);
     expect(res.body.data.datePublished).to.equal(book.datePublished);
     expect(res.body.data.imageUrl).to.equal(`books/${res.body.data.id}-${fileName}`);
+    expect(res.body.data.isbn).to.equal(book.isbn);
     expect(res.body.data.authorId).to.equal(author.id);
   });
 
@@ -109,6 +115,7 @@ describe('Testing book endpoints:', () => {
           'description',
           'datePublished',
           'imageUrl',
+          'isbn',
           'authorId',
         ]);
         done();
@@ -128,6 +135,7 @@ describe('Testing book endpoints:', () => {
           'description',
           'datePublished',
           'imageUrl',
+          'isbn',
           'authorId',
         ]);
         done();
@@ -178,6 +186,7 @@ describe('Testing book endpoints:', () => {
     expect(res.body.data.id).to.equal(book.id);
     expect(res.body.data.datePublished).to.equal(book.datePublished);
     expect(res.body.data.imageUrl).to.equal(book.imageUrl);
+    expect(res.body.data.isbn).to.equal(book.isbn);
     expect(res.body.data.authorId).to.equal(book.authorId);
   });
 
@@ -195,6 +204,7 @@ describe('Testing book endpoints:', () => {
     expect(res.body.data.id).to.equal(book.id);
     expect(res.body.data.datePublished).to.equal(book.datePublished);
     expect(res.body.data.imageUrl).to.equal(`books/${book.id}-${fileName}`);
+    expect(res.body.data.isbn).to.equal(book.isbn);
     expect(res.body.data.authorId).to.equal(book.authorId);
   });
 
