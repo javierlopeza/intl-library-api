@@ -14,9 +14,9 @@ module.exports = {
     });
     const bookGenresBulkInsertPromises = Promise.map(
       books,
-      async ({ isbn, genres }) => {
+      async ({ goodreadsUrl, genres }) => {
         const bookGenresData = [];
-        const bookId = (await Book.findOne({ where: { isbn } })).id;
+        const bookId = (await Book.findOne({ where: { goodreadsUrl } })).id;
         genres.forEach((name) => {
           bookGenresData.push({
             bookId,
@@ -27,6 +27,7 @@ module.exports = {
         });
         return queryInterface.bulkInsert('BookGenres', bookGenresData);
       },
+      { concurrency: 4 },
     );
     return bookGenresBulkInsertPromises;
   },
