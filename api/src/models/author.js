@@ -10,6 +10,18 @@ module.exports = (sequelize, DataTypes) => {
           notEmpty: true,
         },
       },
+      gender: {
+        type: DataTypes.STRING,
+      },
+      birthPlace: {
+        type: DataTypes.STRING,
+      },
+      birthDate: {
+        type: DataTypes.DATE,
+      },
+      deathDate: {
+        type: DataTypes.DATE,
+      },
     },
     {},
   );
